@@ -26,20 +26,14 @@ function outputDate(dates) {
   const startingPeriod = new Date(
     firstPeriodArrayValues[3],
     firstPeriodArrayValues[2],
-    firstPeriodArrayValues[1],
-    0,
-    0,
-    0
+    firstPeriodArrayValues[1]
   );
 
   // build date object for ending period
   const endingPeriod = new Date(
     secondPeriodArrayValues[3],
     secondPeriodArrayValues[2],
-    secondPeriodArrayValues[1],
-    0,
-    0,
-    0
+    secondPeriodArrayValues[1]
   );
 
   // get rounded difference between period
@@ -51,7 +45,7 @@ function outputDate(dates) {
 
   // get number of months between periods
 
-  months = (endingPeriod.getFullYear() - startingPeriod.getFullYear()) * 12;
+  let months = (endingPeriod.getFullYear() - startingPeriod.getFullYear()) * 12;
   months -= startingPeriod.getMonth();
   months += endingPeriod.getMonth();
 
@@ -69,8 +63,11 @@ function outputDate(dates) {
   }
 
   // returns right number of months but returns nothing but if months superior to 12 or equals to none and add "s" or not depending of years value
-  if (months >= 12) months = months - 12;
-  if (months === 0 || months > 12) {
+  // if (months >= 12) months = months - 12;
+  months = months % 12;
+  if (months === 0) {
+      // if (months === 0 || months >= 12) {
+
     months = "";
   } else if (months === 1) {
     months = months + " month, ";
