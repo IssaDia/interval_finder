@@ -16,8 +16,8 @@ function outputDate(dates) {
   const firstPeriodArrayValues = dates[0].match(
     /([0-9]{2})\.([0-9]{2})\.([0-9]{4})/
   );
-  //get day,month and year separately for ending period
 
+  //get day,month and year separately for ending period
   const secondPeriodArrayValues = dates[1].match(
     /([0-9]{2})\.([0-9]{2})\.([0-9]{4})/
   );
@@ -44,37 +44,35 @@ function outputDate(dates) {
   let days = Math.floor(diff / day);
 
   // get number of months between periods
-
   let months = (endingPeriod.getFullYear() - startingPeriod.getFullYear()) * 12;
   months -= startingPeriod.getMonth();
   months += endingPeriod.getMonth();
 
   // get number of years between periods
-
   let years = Math.floor(months / 12);
 
-  // return right number of years but returns nothing but if years equals to none and add "s" or not depending of years value
-  if (years === 0) {
-    years = "";
-  } else if (years === 1) {
-    years = years + " year, ";
-  } else {
-    years = years + " years, ";
-  }
-
-  // returns right number of months but returns nothing but if months superior to 12 or equals to none and add "s" or not depending of years value
-  // if (months >= 12) months = months - 12;
+  //  to be sure months numbers don't surpass 12 months
   months = months % 12;
-  if (months === 0) {
-      // if (months === 0 || months >= 12) {
 
-    months = "";
-  } else if (months === 1) {
-    months = months + " month, ";
-  } else {
-    months = months + " months, ";
+  function getDateElmValueToDisplay(dateElmValue,dateElmName) {
+    
+    if(dateElmName === "days") {
+      return ` total  ${dateElmValue} days`;
+    }
+    if (dateElmValue === 0) {
+      return "";
+    }
+    if (dateElmValue === 1) {
+      return `${dateElmValue} ${dateElmName.replace("s","")},`;
+    }
+    if (dateElmValue > 1) {
+      return `${dateElmValue} ${dateElmName},`;
+    }
+    
   }
 
   // return string with date values
-  return years + months + "total " + days + " days";
+  return (
+    `"${getDateElmValueToDisplay(years, "years")}${getDateElmValueToDisplay(months, "months")}${getDateElmValueToDisplay(days, "days")}"`
+  );
 }
