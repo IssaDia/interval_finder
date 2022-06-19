@@ -17,6 +17,7 @@ function outputDate(dates) {
     /([0-9]{2})\.([0-9]{2})\.([0-9]{4})/
   );
 
+
   //get day,month and year separately for ending period
   const secondPeriodArrayValues = dates[1].match(
     /([0-9]{2})\.([0-9]{2})\.([0-9]{4})/
@@ -53,6 +54,7 @@ function outputDate(dates) {
 
   //  to be sure months numbers don't surpass 12 months
   months = months % 12;
+
 
   function getDateElmValueToDisplay(dateElmValue,dateElmName) {
     
