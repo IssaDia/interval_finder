@@ -41,4 +41,4 @@ Good exercise to manipulate JS Date objects
 
 ## 📑 To improve
 
-- bissextile years
+- leap years
