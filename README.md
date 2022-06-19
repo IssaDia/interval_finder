@@ -1,6 +1,6 @@
 # 🖥 Give that period!
 
-A test to format date output
+A test to return period for two dates
 
 # 📜 Summary
 
