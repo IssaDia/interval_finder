@@ -1,6 +1,7 @@
-# 🖥 Give that period!
+# 🖥 Interval finder!
 
-A test to return period for two dates
+A test to return number of days between two dates
+
 
 # 📜 Summary
 
@@ -14,11 +15,17 @@ A test to return period for two dates
 
 ## Goal
 
-_Display the period between two dates_
+Create a simple website that shows the day difference between two date where:
+- Modifying from/to date should automatically update days difference.
+- Toggle “Including end date” should automatically update days difference.
+- Modifying days difference should automatically update to date.
+
+
+![image](https://user-images.githubusercontent.com/44264590/175052973-a801b1f4-a42b-456b-93b8-0f5ac68ae618.png)
 
 ## 🏗 Built with
 
-- Plain ES6 javascript
+- ViteJs
 
 ## My code environment and utils
 
@@ -32,8 +39,7 @@ Javascript Object Dates : https://www.w3schools.com/js/js_dates.asp
 
 ## Biggest challenges for this project
 
-- get a period for each date matching a Js Date object
-- refactoring the code to be more readable
+- manipulate the values of an input element
 
 ## Feedback
 
@@ -41,4 +47,4 @@ Good exercise to manipulate JS Date objects
 
 ## 📑 To improve
 
-- leap years
+- more interactive
